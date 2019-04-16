@@ -45,14 +45,13 @@ public class Algorithms {
      * https://www.hackerrank.com/challenges/extra-long-factorials/problem
      * @param n
      */
-    public static void extraLongFactorials(int n) {
+    public static BigInteger extraLongFactorials(int n) {
         BigInteger fact = BigInteger.valueOf(1);
         for (int i = 1; i <= n; i++)
         {
             fact = fact.multiply(BigInteger.valueOf(i));
         }
-        System.out.println(fact);
-
+        return fact;
     }
 
 
