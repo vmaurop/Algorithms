@@ -3,10 +3,8 @@ package hackerrank;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Warmup {
 
@@ -235,6 +233,26 @@ public class Warmup {
                 .format( DateTimeFormatter.ofPattern("HH:mm:ss")); //to string
 
         return expectedTime;
+
+    }
+
+    /**
+     * https://www.hackerrank.com/challenges/mini-max-sum/problem
+     * @param arr
+     */
+    public static void miniMaxSum(int[] arr){
+       List<Integer> array = Arrays.stream(arr).boxed().collect(Collectors.toList());
+       Collections.sort(array);
+       long minSum = 0;
+       long maxSum = 0;
+       for(int i = 1; i < array.size(); i++){
+           maxSum += array.get(i);
+       }
+
+        for(int i = 0; i < array.size()-1; i++){
+            minSum += array.get(i);
+        }
+        System.out.println(minSum+" "+maxSum);
 
     }
 }
