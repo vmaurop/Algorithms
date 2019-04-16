@@ -9,7 +9,7 @@ public class Algorithms {
      * @param grades
      * @return
      */
-    static int[] gradingStudents(int[] grades) {
+    public static int[] gradingStudents(int[] grades) {
         for(int j=0; j < grades.length; j++) {
             if(grades[j] >=38) {
                 for(int i = grades[j]+1; i< grades[j]+5; i++){
@@ -29,7 +29,7 @@ public class Algorithms {
      * @param ar
      * @return
      */
-    static int divisibleSumPairs(int n, int k, int[] ar) {
+    public static int divisibleSumPairs(int n, int k, int[] ar) {
         int count =0;
         for(int i =0; i< n; i++){
             for(int j = i+1; j < n; j++){
@@ -45,7 +45,7 @@ public class Algorithms {
      * https://www.hackerrank.com/challenges/extra-long-factorials/problem
      * @param n
      */
-    static void extraLongFactorials(int n) {
+    public static void extraLongFactorials(int n) {
         BigInteger fact = BigInteger.valueOf(1);
         for (int i = 1; i <= n; i++)
         {

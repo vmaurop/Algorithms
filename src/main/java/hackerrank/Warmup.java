@@ -143,7 +143,7 @@ public class Warmup {
      * @param array2
      * @return
      */
-    static List<Integer> compareTriplets(List<Integer> array1, List<Integer> array2) {
+    public static List<Integer> compareTriplets(List<Integer> array1, List<Integer> array2) {
         List<Integer> compare = new ArrayList<>();
         int player1 = 0;
         int player2 = 0;
@@ -165,7 +165,7 @@ public class Warmup {
      * @param array
      * @return
      */
-    static int diagonalDifference(int[][] array) {
+    public static int diagonalDifference(int[][] array) {
         int sum1 = 0;
         int sum2 = 0;
         for (int i = 0; i < array.length; i++) {
@@ -187,7 +187,7 @@ public class Warmup {
      *  https://www.hackerrank.com/challenges/staircase/problem
      * @param n
      */
-    static void staircase(int n) {
+    public static void staircase(int n) {
         String[] array = new String[n];
         for(int i =0; i<n; i++){
             array[i] = " ";
@@ -206,7 +206,7 @@ public class Warmup {
      * @param ar
      * @return
      */
-    static int birthdayCakeCandles(int[] ar) {
+    public static int birthdayCakeCandles(int[] ar) {
         int max = ar[0];
         for(int i=0; i< ar.length; i++){
             if(ar[i] > max){
@@ -227,7 +227,7 @@ public class Warmup {
      * @param s
      * @return
      */
-    static String timeConversion(String s) {
+   public static String timeConversion(String s) {
         StringBuilder stringBuilder = new StringBuilder(s);
         s =  stringBuilder.insert(8, " ").toString() ;
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a" , Locale.getDefault());
