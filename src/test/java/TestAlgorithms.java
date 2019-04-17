@@ -1,9 +1,6 @@
 import hackerrank.Algorithms;
-import hackerrank.Warmup;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class TestAlgorithms {
