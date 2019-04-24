@@ -8,9 +8,8 @@ public class BigNumber {
     /**
      * ref https://www.hackerrank.com/challenges/java-biginteger/problem
      */
-    public void bigInt()
-    {
-        BigInteger a,b,sum,multiply;
+    public void bigInt() {
+        BigInteger a, b, sum, multiply;
         Scanner in = new Scanner(System.in);
         a = in.nextBigInteger();  //input for BigInteger
         b = in.nextBigInteger();
@@ -23,20 +22,16 @@ public class BigNumber {
     /**
      * https://www.hackerrank.com/challenges/java-primality-test/problem
      */
-    public void primalityTest()
-    {
+    public void primalityTest() {
         Scanner in = new Scanner(System.in);
         BigInteger n = in.nextBigInteger();
         in.close(); //optional we close scanner
         boolean b = n.isProbablePrime(1000); //if it is prime return true!
-        if(b)                                            //public boolean isProbablePrime(int certainty)
+        if (b)                                            //public boolean isProbablePrime(int certainty)
         {                                          // certainty − a measure of the uncertainty that the caller is willing to tolerate:
             System.out.println("prime");                                               // if the call returns true the probability that this BigInteger is prime exceeds (1 - 1/2certainty).
             // The execution time of this method is proportional to the value of this parameter
-
-        }
-        else
-        {
+        } else {
             System.out.println("not prime");
         }
     }
