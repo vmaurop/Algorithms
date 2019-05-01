@@ -1,6 +1,8 @@
 import hackerrank.Algorithms;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import projecteuler.Euler1;
+
 import java.math.BigInteger;
 
 public class TestAlgorithms {
@@ -26,6 +28,18 @@ public class TestAlgorithms {
         int n = 25;
         BigInteger bigInteger = Algorithms.extraLongFactorials(n);
         Assert.assertEquals(new BigInteger("15511210043330985984000000"), bigInteger);
+    }
+
+    @Test
+    public void smallestMultiples(){
+        int smallestMul = 233168;
+        Assert.assertEquals(new Euler1().multiplesOf3And5(), smallestMul);
+    }
+
+    @Test
+    public void evenFibonacciNumbers(){
+        int evenFibonaci = 4613732;
+        Assert.assertEquals(new Euler1().evenFibonacciNumbers(), evenFibonaci);
     }
 
 }
