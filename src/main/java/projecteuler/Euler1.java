@@ -88,4 +88,42 @@ public class Euler1 {
 
     }
 
+    /**
+     * https://projecteuler.net/problem=6
+     */
+    public static int sumSquareDiff() {
+        int sum1 = 0;
+        for (int i = 1; i < 101; i++) {
+            sum1 = (int) (sum1 + Math.pow(i, 2));
+        }
+        int sum2 = 0;
+        for (int k = 1; k < 101; k++) {
+            sum2 = sum2 + k;
+        }
+        int diff;
+        diff = ((int) Math.pow(sum2, 2) - sum1);
+        return diff;
+    }
+
+    /**
+     * https://projecteuler.net/problem=9
+     */
+    public static long specialPythagoreanTriplet() {
+        int a = 0, b = 0, c = 0;
+        for (int i = 0; i < 1001; i++) {
+            for (int j = 0; j < 1001; j++) {
+                for (int k = 0; k < 1001; k++) {
+                    if (Math.pow(i, 2) + Math.pow(j, 2) == Math.pow(k, 2) && i + j + k == 1000 && i < j && j < k) {
+                        a = i;
+                        b = j;
+                        c = k;
+
+                    }
+                }
+            }
+        }
+        return a * b * c;
+    }
+
+
 }
