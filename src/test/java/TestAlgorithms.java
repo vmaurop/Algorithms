@@ -42,4 +42,16 @@ public class TestAlgorithms {
         Assert.assertEquals(new Euler1().evenFibonacciNumbers(), evenFibonaci);
     }
 
+    @Test
+    public void sumSquareDiff(){
+        int sumSquareDiff = 25164150;
+        Assert.assertEquals(Euler1.sumSquareDiff(), sumSquareDiff);
+    }
+
+    @Test
+    public void specialPythagoreanTriplet(){
+        long specialPythagoreanTriplet = 31875000;
+        Assert.assertEquals(Euler1.specialPythagoreanTriplet(), specialPythagoreanTriplet);
+    }
+
 }
