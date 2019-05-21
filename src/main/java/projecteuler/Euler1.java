@@ -1,7 +1,10 @@
 package projecteuler;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Euler1 {
 
@@ -48,6 +51,24 @@ public class Euler1 {
         }
         return sum1;
     }
+
+    /**
+     * https://projecteuler.net/problem=3
+     * @return
+     */
+    public static Long largestPrimeFactors() {
+        List<Long> primeFactors = new ArrayList();
+        Long n = 600851475143l;
+        for (long i = 2l; i <= n; i++) {
+            while (n % i == 0) {
+                primeFactors.add(i);
+                n /= i;
+            }
+        }
+        Collections.sort(primeFactors);
+        return primeFactors.get(primeFactors.size() - 1);
+    }
+
 
     /**
      * https://projecteuler.net/problem=5
