@@ -10,6 +10,7 @@ public class Euler2 {
 
     /**
      * https://projecteuler.net/problem=56
+     *
      * @return
      */
     public long powerfulDigitSum() {
@@ -34,11 +35,12 @@ public class Euler2 {
 
     /**
      * https://projecteuler.net/problem=97
+     *
      * @return
      */
-    public BigInteger largeNonMersennePrime(){
+    public BigInteger largeNonMersennePrime() {
         BigInteger bigInteger = BigInteger.valueOf(28433).multiply(BigInteger.valueOf(2).pow(7830457)).add(BigInteger.valueOf(1));
         String x = bigInteger.toString();
-        return new BigInteger(x.substring(x.length()-10));
+        return new BigInteger(x.substring(x.length() - 10));
     }
 }

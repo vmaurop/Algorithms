@@ -3,13 +3,16 @@ package projecteuler;
 import java.math.BigInteger;
 import java.util.*;
 
+
 public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=1
+     *
      * @return
      */
     public int multiplesOf3And5() {
+        java.sql.Date e;
         int sum = 0;
         for (int i = 1; i < 1000; i++) {
             if (i % 3 == 0 || i % 5 == 0) {
@@ -22,27 +25,23 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=2
+     *
      * @return
      */
-    public long evenFibonacciNumbers()
-    {
+    public long evenFibonacciNumbers() {
         ArrayList<Integer> fibonacci = new ArrayList<>();
-        int sum=0;
+        int sum = 0;
         fibonacci.add(1);
         fibonacci.add(2);
-        while(sum<4000000)
-        {
-
-            sum = fibonacci.get(fibonacci.size()-1)+fibonacci.get(fibonacci.size()-2);
+        while (sum < 4000000) {
+            sum = fibonacci.get(fibonacci.size() - 1) + fibonacci.get(fibonacci.size() - 2);
             fibonacci.add(sum);
 
         }
-        long sum1=0L;
-        for(int i=0;i<fibonacci.size()-1;i++)
-        {
-            if(fibonacci.get(i)%2==0)
-            {
-                sum1=sum1+fibonacci.get(i);
+        long sum1 = 0L;
+        for (int i = 0; i < fibonacci.size() - 1; i++) {
+            if (fibonacci.get(i) % 2 == 0) {
+                sum1 = sum1 + fibonacci.get(i);
             }
 
         }
@@ -51,6 +50,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=3
+     *
      * @return
      */
     public static Long largestPrimeFactors() {
@@ -68,6 +68,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=4
+     *
      * @return
      */
     public static long largestPalindromeProduct() {
@@ -76,7 +77,7 @@ public class Euler1 {
         for (int i = 100; i < 1000; i++) {
             for (int j = 100; j < 1000; j++) {
                 product = i * j;
-                if (String.valueOf(product).equals(new StringBuilder(String.valueOf(product)).reverse().toString())){
+                if (String.valueOf(product).equals(new StringBuilder(String.valueOf(product)).reverse().toString())) {
                     palindromeProducts.add(product);
                 }
             }
@@ -84,42 +85,36 @@ public class Euler1 {
         Collections.sort(palindromeProducts);
         return palindromeProducts.get(palindromeProducts.size() - 1);
     }
+
     /**
      * https://projecteuler.net/problem=5
+     *
      * @return
      */
-    public int smallestMultiple()
-    {
+    public int smallestMultiple() {
         int max;
         int counter1 = 0;
         int sm_mul;
-        int [] num = new int[20];
-        for (int i=0;i<20;i++)
-        {
-            num[i]=i+1;
+        int[] num = new int[20];
+        for (int i = 0; i < 20; i++) {
+            num[i] = i + 1;
         }
         Arrays.sort(num);
         max = num[19];
-
-
-        while(counter1<20)
-        {
-            counter1=0;
-            for (int j=0;j<20;j++)
-            {
-                if (max%num[j]==0)
-                {
-                    counter1=counter1+1;
+        while (counter1 < 20) {
+            counter1 = 0;
+            for (int j = 0; j < 20; j++) {
+                if (max % num[j] == 0) {
+                    counter1 = counter1 + 1;
                 }
 
             }
-            if (counter1!=20)
-            {
-                max=max+1;
+            if (counter1 != 20) {
+                max = max + 1;
             }
         }
-        sm_mul=max;
-       return sm_mul;
+        sm_mul = max;
+        return sm_mul;
 
     }
 
@@ -142,6 +137,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=7
+     *
      * @return
      */
     public BigInteger primeNth() {
@@ -153,6 +149,47 @@ public class Euler1 {
 
         } while (primeNumbers.size() != 10001);
         return p1;
+    }
+
+    /**
+     * https://projecteuler.net/problem=8
+     *
+     * @return
+     */
+    public BigInteger largestProductInSeries() {
+        String bigString = "73167176531330624919225119674426574742355349194934\n" +
+                "96983520312774506326239578318016984801869478851843\n" +
+                "85861560789112949495459501737958331952853208805511\n" +
+                "12540698747158523863050715693290963295227443043557\n" +
+                "66896648950445244523161731856403098711121722383113\n" +
+                "62229893423380308135336276614282806444486645238749\n" +
+                "30358907296290491560440772390713810515859307960866\n" +
+                "70172427121883998797908792274921901699720888093776\n" +
+                "65727333001053367881220235421809751254540594752243\n" +
+                "52584907711670556013604839586446706324415722155397\n" +
+                "53697817977846174064955149290862569321978468622482\n" +
+                "83972241375657056057490261407972968652414535100474\n" +
+                "82166370484403199890008895243450658541227588666881\n" +
+                "16427171479924442928230863465674813919123162824586\n" +
+                "17866458359124566529476545682848912883142607690042\n" +
+                "24219022671055626321111109370544217506941658960408\n" +
+                "07198403850962455444362981230987879927244284909188\n" +
+                "84580156166097919133875499200524063689912560717606\n" +
+                "05886116467109405077541002256983155200055935729725\n" +
+                "71636269561882670428252483600823257530420752963450";
+        String largeReplace = bigString.replaceAll("\\s", "");
+        BigInteger bigInteger = BigInteger.ONE;
+        List<BigInteger> listOfProducts = new ArrayList<>();
+        char[] charsArray = largeReplace.toCharArray();
+        for (int i = 0; i < largeReplace.length() - 13; i++) {
+            for (int j = 0; j < 13; j++) {
+                bigInteger = bigInteger.multiply(BigInteger.valueOf((long) charsArray[i + j] - '0'));
+            }
+            listOfProducts.add(bigInteger);
+            bigInteger = BigInteger.ONE;
+        }
+        Collections.sort(listOfProducts);
+        return listOfProducts.get(listOfProducts.size() - 1);
     }
 
     /**
@@ -177,6 +214,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=10
+     *
      * @return
      */
     public BigInteger sumOfPrimes() {
@@ -193,6 +231,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=13
+     *
      * @return
      */
     public BigInteger largeSum() {
@@ -308,6 +347,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=16
+     *
      * @return
      */
     public int powerDigitSum() {
@@ -322,6 +362,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=20
+     *
      * @return
      */
     public int factorialDigitSum() {
@@ -339,15 +380,16 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=25
+     *
      * @return
      */
-    public int indexFibonacciNth(){
+    public int indexFibonacciNth() {
         ArrayList<BigInteger> fibon = new ArrayList<>();
         fibon.add(BigInteger.valueOf(1));
         fibon.add(BigInteger.valueOf(1));
         BigInteger sum;
-        while(fibon.get(fibon.size() -1).toString().length()<1000) {
-            sum = fibon.get(fibon.size()-1).add(fibon.get(fibon.size()-2));
+        while (fibon.get(fibon.size() - 1).toString().length() < 1000) {
+            sum = fibon.get(fibon.size() - 1).add(fibon.get(fibon.size() - 2));
             fibon.add(sum);
         }
         return fibon.size();
@@ -355,6 +397,7 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=29
+     *
      * @return
      */
     public int distinctPowers() {
@@ -372,15 +415,16 @@ public class Euler1 {
 
     /**
      * https://projecteuler.net/problem=48
+     *
      * @return
      */
-    public BigInteger lastTenDigitsOfSelfPowers(){
+    public BigInteger lastTenDigitsOfSelfPowers() {
         BigInteger bigInteger = BigInteger.ZERO;
-        for(int i=1;i<1001;i++) {
-            bigInteger=bigInteger.add(BigInteger.valueOf(i).pow(i));
+        for (int i = 1; i < 1001; i++) {
+            bigInteger = bigInteger.add(BigInteger.valueOf(i).pow(i));
         }
         String stringBigInteger = bigInteger.toString();
-        return new BigInteger(stringBigInteger.substring(stringBigInteger.length()-10));
+        return new BigInteger(stringBigInteger.substring(stringBigInteger.length() - 10));
     }
 
 

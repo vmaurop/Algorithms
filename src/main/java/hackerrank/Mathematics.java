@@ -10,7 +10,6 @@ public class Mathematics {
      */
     public static void easySum() {
         int T;
-        // BigInteger sum = new BigInteger("0");
         ArrayList<BigInteger> sum = new ArrayList<>();
         BigInteger x = new BigInteger("0");
         Scanner in = new Scanner(System.in);
