@@ -1,6 +1,7 @@
 package hackerrank;
 
 import java.math.BigInteger;
+import java.util.logging.SocketHandler;
 
 public class Algorithms {
 
@@ -54,6 +55,29 @@ public class Algorithms {
             fact = fact.multiply(BigInteger.valueOf(i));
         }
         return fact;
+    }
+
+    /**
+     *  https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+     * @param scores
+     * @return
+     */
+    public static int[] breakingRecords(int[] scores) {
+        int countBreakMaxRecord = 0;
+        int countBreakMinRecord = 0;
+        int[] results = new int[2];
+        int max = scores[0],min = scores[0];
+        for (int i = 0 ; i < scores.length; i++) {
+            if (scores[i] > max) {
+                results[0] = ++countBreakMaxRecord;
+                max = scores[i];
+            }
+            if (scores[i] < min) {
+                results[1] = ++countBreakMinRecord;
+                min = scores[i];
+            }
+        }
+        return results;
     }
 
 
