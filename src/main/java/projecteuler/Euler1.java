@@ -12,7 +12,6 @@ public class Euler1 {
      * @return
      */
     public int multiplesOf3And5() {
-        java.sql.Date e;
         int sum = 0;
         for (int i = 1; i < 1000; i++) {
             if (i % 3 == 0 || i % 5 == 0) {

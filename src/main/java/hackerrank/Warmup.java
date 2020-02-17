@@ -58,9 +58,6 @@ public class Warmup {
        /* Calendar ca1 = new GregorianCalendar();
         ca1.set(year,month,day);   //we set the date
         int Day_of_week=ca1.get(Calendar.DAY_OF_WEEK);  //for some curiosity, the days begin on Saturday!So 1 is Saturday,2 is Sunday...
-        LocalDate dt = LocalDate.of(year,month,day);
-        System.out.print(dt.getDayOfWeek());
-
         switch (Day_of_week)
         {
             case 1:
@@ -80,12 +77,8 @@ public class Warmup {
             default:
                 return "Something gone wrong..."; //nothing has gone wrong..:))
         }*/
-        /*int x = 1;
-        Integer.toString(x);
-        System.out.println(x);*/
         LocalDate dt = LocalDate.of(year, month, day);
-        return String.valueOf(dt.getDayOfWeek());  //returns the enums day of week so casting to string
-
+        return dt.getDayOfWeek().name();
     }
 
     /**
