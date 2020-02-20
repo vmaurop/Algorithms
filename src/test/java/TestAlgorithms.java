@@ -54,4 +54,16 @@ public class TestAlgorithms {
         Assert.assertEquals(Euler1.specialPythagoreanTriplet(), specialPythagoreanTriplet);
     }
 
+    @Test
+    public void breakingRecords() {
+        int[] result = new int[]{4,0};
+        int[] input = new int[]{3,4,21,36,10,28,35,5,24,42};
+        Assert.assertEquals(Algorithms.breakingRecords(input), result);
+    }
+
+    @Test
+    public void beautifulDays() {
+        Assert.assertEquals(Algorithms.beautifulDays(20, 23, 6), 2);
+    }
+
 }

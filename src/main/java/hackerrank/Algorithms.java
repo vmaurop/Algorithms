@@ -1,7 +1,8 @@
 package hackerrank;
 
 import java.math.BigInteger;
-import java.util.logging.SocketHandler;
+import java.util.Collections;
+import java.util.List;
 
 public class Algorithms {
 
@@ -78,6 +79,61 @@ public class Algorithms {
             }
         }
         return results;
+    }
+
+    /**
+     * https://www.hackerrank.com/challenges/migratory-birds/problem
+     * @param arr
+     * @return
+     */
+    public static int migratoryBirds(List<Integer> arr) {
+        int[] counter = new int[arr.size()];
+        //we sort the list so we get the  the lower number that occurs at the highest frequency
+        Collections.sort(arr);
+
+        //Get frequency of each element in list
+        for(int i = 0; i < arr.size(); i++){
+            for(int j = 0; j < arr.size(); j++ ){
+                if(arr.get(i).equals(arr.get(j))){
+                    counter[j] = counter[j] +1;
+                }
+            }
+        }
+        //or collections
+//        for (int i = 0; i < arr.size(); i++) {
+//            counter[i] = Collections.frequency(arr, arr.get(i));
+//        }
+
+
+        //Get max frequency of already sorted list
+        int max = counter[0];
+        int index =0;
+        for(int i =0; i < counter.length; i++){
+            if(counter[i] > max){
+                max = counter[i];
+                index = i;
+            }
+        }
+        return arr.get(index);
+
+    }
+
+    /**
+     * https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
+     * @param i
+     * @param j
+     * @param k
+     * @return
+     */
+    public static int beautifulDays(int i, int j, int k) {
+        int count = 0;
+        for(int index = i; index <=j; index++){
+            if ((index - Integer.parseInt(String.valueOf(new StringBuilder(String.valueOf(index)).reverse())))%k == 0) {
+                count++;
+            }
+        }
+        return count;
+
     }
 
 
