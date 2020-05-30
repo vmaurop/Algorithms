@@ -1,3 +1,5 @@
+package testmethods;
+
 import hackerrank.Algorithms;
 import org.testng.Assert;
 import org.testng.annotations.Test;
