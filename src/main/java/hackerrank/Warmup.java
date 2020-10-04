@@ -55,28 +55,6 @@ public class Warmup {
      * @return
      */
     public static String getDay(int year, int month, int day) {
-       /* Calendar ca1 = new GregorianCalendar();
-        ca1.set(year,month,day);   //we set the date
-        int Day_of_week=ca1.get(Calendar.DAY_OF_WEEK);  //for some curiosity, the days begin on Saturday!So 1 is Saturday,2 is Sunday...
-        switch (Day_of_week)
-        {
-            case 1:
-                return "Sunday";
-            case 2:
-                return "Monday";
-            case 3:
-                return "Tuesday";
-            case 4:
-                 return "Wednesday";
-            case 5:
-                 return "Thursday";
-            case 6:
-                 return "Friday";
-            case 7:
-                 return "Saturday";
-            default:
-                return "Something gone wrong..."; //nothing has gone wrong..:))
-        }*/
         LocalDate dt = LocalDate.of(year, month, day);
         return dt.getDayOfWeek().name();
     }
@@ -155,14 +133,14 @@ public class Warmup {
      */
     public static int birthdayCakeCandles(int[] ar) {
         int max = ar[0];
-        for (int i = 0; i < ar.length; i++) {
-            if (ar[i] > max) {
-                max = ar[i];
+        for (int j : ar) {
+            if (j > max) {
+                max = j;
             }
         }
         int count = 0;
-        for (int j = 0; j < ar.length; j++) {
-            if (max == ar[j]) {
+        for (int i : ar) {
+            if (max == i) {
                 count++;
             }
         }
@@ -179,10 +157,8 @@ public class Warmup {
         StringBuilder stringBuilder = new StringBuilder(s);
         s = stringBuilder.insert(8, " ").toString();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a", Locale.getDefault());
-        String expectedTime = LocalTime.parse(s, dateTimeFormatter)
+        return LocalTime.parse(s, dateTimeFormatter)
                 .format(DateTimeFormatter.ofPattern("HH:mm:ss")); //to string
-        return expectedTime;
-
     }
 
     /**

@@ -13,7 +13,7 @@ public class TestAlgorithms {
     public void gradingStudents() {
         int[] arr = new int[] { 73, 67, 38, 33};
         int[] result = Algorithms.gradingStudents(arr);
-        Assert.assertEquals(new int[]{75, 67, 40 ,33}, result);
+        Assert.assertEquals(result,new int[]{75, 67, 40 ,33});
     }
 
     @Test
@@ -22,7 +22,7 @@ public class TestAlgorithms {
         int k = 3;
         int[] array = new int[]{1, 3, 2, 6, 1, 2};
         int result = Algorithms.divisibleSumPairs(n, k, array);
-        Assert.assertEquals(5, result);
+        Assert.assertEquals(result, 5);
     }
 
     @Test
@@ -36,6 +36,18 @@ public class TestAlgorithms {
     public void smallestMultiples(){
         int smallestMul = 233168;
         Assert.assertEquals(new Euler1().multiplesOf3And5(), smallestMul);
+    }
+
+    @Test
+    public void primeNth(){
+        BigInteger primeNth = BigInteger.valueOf(104743);
+        Assert.assertEquals(new Euler1().primeNth(), primeNth);
+    }
+
+    @Test
+    public void factorialDigitSum(){
+        int digitSum = 648;
+        Assert.assertEquals(new Euler1().factorialDigitSum(), digitSum);
     }
 
     @Test

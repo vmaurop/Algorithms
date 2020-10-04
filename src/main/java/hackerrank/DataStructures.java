@@ -1,13 +1,13 @@
 package hackerrank;
 
-        import java.util.Scanner;
+import java.util.Scanner;
 
 public class DataStructures {
 
     /**
      * https://www.hackerrank.com/challenges/java-1d-array-introduction/problem
      */
-    public static void oneDArray() {
+    public void oneDArray() {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         int[] a = new int[n];

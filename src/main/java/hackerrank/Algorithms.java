@@ -59,7 +59,8 @@ public class Algorithms {
     }
 
     /**
-     *  https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+     * https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+     *
      * @param scores
      * @return
      */
@@ -67,15 +68,16 @@ public class Algorithms {
         int countBreakMaxRecord = 0;
         int countBreakMinRecord = 0;
         int[] results = new int[2];
-        int max = scores[0],min = scores[0];
-        for (int i = 0 ; i < scores.length; i++) {
-            if (scores[i] > max) {
+        int max = scores[0];
+        int min = scores[0];
+        for (int score : scores) {
+            if (score > max) {
                 results[0] = ++countBreakMaxRecord;
-                max = scores[i];
+                max = score;
             }
-            if (scores[i] < min) {
+            if (score < min) {
                 results[1] = ++countBreakMinRecord;
-                min = scores[i];
+                min = score;
             }
         }
         return results;
@@ -83,33 +85,28 @@ public class Algorithms {
 
     /**
      * https://www.hackerrank.com/challenges/migratory-birds/problem
+     *
      * @param arr
      * @return
      */
-    public static int migratoryBirds(List<Integer> arr) {
+    public int migratoryBirds(List<Integer> arr) {
         int[] counter = new int[arr.size()];
         //we sort the list so we get the  the lower number that occurs at the highest frequency
         Collections.sort(arr);
 
         //Get frequency of each element in list
-        for(int i = 0; i < arr.size(); i++){
-            for(int j = 0; j < arr.size(); j++ ){
-                if(arr.get(i).equals(arr.get(j))){
-                    counter[j] = counter[j] +1;
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.size(); j++) {
+                if (arr.get(i).equals(arr.get(j))) {
+                    counter[j] = counter[j] + 1;
                 }
             }
         }
-        //or collections
-//        for (int i = 0; i < arr.size(); i++) {
-//            counter[i] = Collections.frequency(arr, arr.get(i));
-//        }
-
-
         //Get max frequency of already sorted list
         int max = counter[0];
-        int index =0;
-        for(int i =0; i < counter.length; i++){
-            if(counter[i] > max){
+        int index = 0;
+        for (int i = 0; i < counter.length; i++) {
+            if (counter[i] > max) {
                 max = counter[i];
                 index = i;
             }
@@ -120,6 +117,7 @@ public class Algorithms {
 
     /**
      * https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
+     *
      * @param i
      * @param j
      * @param k
@@ -127,8 +125,8 @@ public class Algorithms {
      */
     public static int beautifulDays(int i, int j, int k) {
         int count = 0;
-        for(int index = i; index <=j; index++){
-            if ((index - Integer.parseInt(String.valueOf(new StringBuilder(String.valueOf(index)).reverse())))%k == 0) {
+        for (int index = i; index <= j; index++) {
+            if ((index - Integer.parseInt(String.valueOf(new StringBuilder(String.valueOf(index)).reverse()))) % k == 0) {
                 count++;
             }
         }

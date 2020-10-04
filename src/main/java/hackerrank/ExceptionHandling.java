@@ -8,7 +8,7 @@ public class ExceptionHandling {
     /**
      * https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem
      */
-    public static void arithmeticException(){
+    public void arithmeticException(){
         Scanner sc = new Scanner(System.in);
         try{
             int x = sc.nextInt();
@@ -33,12 +33,12 @@ public class ExceptionHandling {
      * @return
      * @throws Exception
      */
-    public static long power(int n, int p) throws Exception {
+    public static long power(int n, int p) {
         if(n == 0 && p ==0){
-            throw new Exception("n and p should not be zero");
+            throw new IllegalArgumentException("n and p should not be zero");
         }
         if(n <0 || p <0){
-            throw new Exception("n or p should not be negative");
+            throw new IllegalArgumentException("n or p should not be negative");
         }
         return (long) Math.pow(n,p);
     }

@@ -12,8 +12,7 @@ public class Strings {
         String s = in.next();
         int count = 1;
         for (int i = 0; i < s.length(); i++) {
-            if (Character.isUpperCase(s.charAt(i)))  //check if a character is uppercase...
-            {
+            if (Character.isUpperCase(s.charAt(i))) {//check if a character is uppercase...
                 count++;
             }
         }
@@ -25,10 +24,10 @@ public class Strings {
      */
     public static void palindromic() {
         Scanner sc = new Scanner(System.in);
-        String A = sc.next();
-        StringBuilder stringBuilder = new StringBuilder(A);
-        String B = stringBuilder.reverse().toString();
-        if (A.equals(B)) {
+        String first = sc.next();
+        StringBuilder stringBuilder = new StringBuilder(first);
+        String second = stringBuilder.reverse().toString();
+        if (first.equals(second)) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
@@ -40,10 +39,10 @@ public class Strings {
      */
     public static void lexicographically() {
         Scanner sc = new Scanner(System.in);
-        String A = sc.next();
-        String B = sc.next();
-        System.out.println(A.length() + B.length());
-        System.out.println((A.compareTo(B) > 0) ? "Yes" : "No");
-        System.out.println(A.substring(0, 1).toUpperCase().concat(A.substring(1)) + " " + B.substring(0, 1).toUpperCase().concat(B.substring(1)));
+        String first = sc.next();
+        String second = sc.next();
+        System.out.println(first.length() + second.length());
+        System.out.println((first.compareTo(second) > 0) ? "Yes" : "No");
+        System.out.println(first.substring(0, 1).toUpperCase().concat(first.substring(1)) + " " + second.substring(0, 1).toUpperCase().concat(second.substring(1)));
     }
 }

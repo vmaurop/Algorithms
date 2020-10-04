@@ -14,18 +14,19 @@ public class Euler2 {
 
     /**
      * https://projecteuler.net/problem=52
+     *
      * @return
      */
-    public int permutedMultiples(){
+    public int permutedMultiples() {
         List<String> list1, list2, list3, list4, list5, list6;
         int num = 1;
         do {
             list1 = Arrays.asList(String.valueOf(num).split("(?<=.)"));
-            list2 = Arrays.asList(String.valueOf(2*num).split("(?<=.)"));
-            list3 = Arrays.asList(String.valueOf(3*num).split("(?<=.)"));
-            list4 = Arrays.asList(String.valueOf(4*num).split("(?<=.)"));
-            list5 = Arrays.asList(String.valueOf(5*num).split("(?<=.)"));
-            list6 = Arrays.asList(String.valueOf(6*num).split("(?<=.)"));
+            list2 = Arrays.asList(String.valueOf(2 * num).split("(?<=.)"));
+            list3 = Arrays.asList(String.valueOf(3 * num).split("(?<=.)"));
+            list4 = Arrays.asList(String.valueOf(4 * num).split("(?<=.)"));
+            list5 = Arrays.asList(String.valueOf(5 * num).split("(?<=.)"));
+            list6 = Arrays.asList(String.valueOf(6 * num).split("(?<=.)"));
             Collections.sort(list1);
             Collections.sort(list2);
             Collections.sort(list3);
@@ -37,18 +38,19 @@ public class Euler2 {
             }
             num++;
         } while (num < Integer.MAX_VALUE);
-        throw new RuntimeException("There is such an integer to fulfilled those criteria");
+        throw new IllegalArgumentException("There is such an integer to fulfilled those criteria");
     }
 
     /**
      * https://projecteuler.net/problem=53
+     *
      * @return
      */
     public static int combinatoricSelections() {
         int count = 0;
-        for (int n = 100; n >= 1 ; n--) {
+        for (int n = 100; n >= 1; n--) {
             for (int r = 1; r <= n; r++) {
-                if (extraLongFactorials(n).divide(extraLongFactorials(r).multiply(extraLongFactorials(n - r))).compareTo(new BigInteger("1000000")) > 0) {
+                if (extraLongFactorials(n).divide(extraLongFactorials(r).multiply(extraLongFactorials(n - r))).compareTo(BigInteger.valueOf(1000000)) > 0) {
                     count++;
                 }
             }
@@ -67,7 +69,7 @@ public class Euler2 {
             for (int j = 1; j < 100; j++) {
                 BigInteger x = BigInteger.valueOf(i).pow(j);
                 String y = x.toString();
-                char arr[] = y.toCharArray();
+                char[] arr = y.toCharArray();
                 int[] num = new int[arr.length];
                 int sum = 0;
                 for (int k = 0; k < arr.length; k++) {

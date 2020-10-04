@@ -9,19 +9,19 @@ public class Mathematics {
      * ref: https://www.hackerrank.com/challenges/easy-sum/problem
      */
     public static void easySum() {
-        int T;
+        int length;
         ArrayList<BigInteger> sum = new ArrayList<>();
-        BigInteger x = new BigInteger("0");
+        BigInteger x = BigInteger.ZERO;
         Scanner in = new Scanner(System.in);
-        T = in.nextInt();
-        long[] N = new long[T];
-        long[] m = new long[T];
-        for (int i = 0; i < T; i++) {
-            N[i] = in.nextLong();
+        length = in.nextInt();
+        long[] longs = new long[length];
+        long[] m = new long[length];
+        for (int i = 0; i < length; i++) {
+            longs[i] = in.nextLong();
             m[i] = in.nextLong();
         }
-        for (int j = 0; j < T; j++) {
-            for (int i = 1; i <= N[j]; i++) {
+        for (int j = 0; j < length; j++) {
+            for (int i = 1; i <= longs[j]; i++) {
                 x = x.add(BigInteger.valueOf(i % m[j]));
 
             }
