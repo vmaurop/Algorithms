@@ -1,6 +1,6 @@
 package hackerrank;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Strings {
 
@@ -45,4 +45,30 @@ public class Strings {
         System.out.println((first.compareTo(second) > 0) ? "Yes" : "No");
         System.out.println(first.substring(0, 1).toUpperCase().concat(first.substring(1)) + " " + second.substring(0, 1).toUpperCase().concat(second.substring(1)));
     }
+
+
+    /**
+     * https://www.hackerrank.com/challenges/java-anagrams/
+     * @param a
+     * @param b
+     * @return
+     */
+    public static boolean isAnagram(String a, String b) {
+        List<String> first = Arrays.asList(a.toLowerCase().split(""));
+        List<String> second = Arrays.asList(b.toLowerCase().split(""));
+        Collections.sort(first);
+        Collections.sort(second);
+        return first.equals(second);
+    }
+
+    public static void tokens(String input){
+        input = input.replaceAll("[!,?._'@]"," ");
+        List<String> tokensList = new ArrayList<>(Arrays.asList(input.split(" ")));
+        tokensList.removeIf(String::isEmpty);
+        System.out.println(tokensList.size());
+        for(String element : tokensList){
+            System.out.println(element);
+        }
+    }
+
 }

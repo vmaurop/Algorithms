@@ -30,4 +30,30 @@ public class LetCode {
         return index;
     }
 
+    /**
+     * https://leetcode.com/problems/reverse-integer/
+     * @param x
+     * @return
+     */
+    public static int reverse(int x) {
+        try {
+            String integer = String.valueOf(x);
+            StringBuilder stringBuilder = new StringBuilder(integer);
+            stringBuilder.reverse();
+            for (int i = 0; i < stringBuilder.length(); i++) {
+                if (stringBuilder.charAt(0) == '0') {
+                    stringBuilder.deleteCharAt(0);
+                }
+            }
+            if (stringBuilder.charAt(stringBuilder.length() - 1) == '-') {
+                stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                stringBuilder.insert(0, '-');
+            }
+            return Integer.parseInt(stringBuilder.toString());
+        }
+        catch (Exception e){
+            return 0;
+        }
+    }
+
 }
