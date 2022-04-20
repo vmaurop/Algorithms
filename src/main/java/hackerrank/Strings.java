@@ -61,6 +61,10 @@ public class Strings {
         return first.equals(second);
     }
 
+    /**
+     * https://www.hackerrank.com/challenges/java-string-tokens/problem?h_r=profile
+     * @param input
+     */
     public static void tokens(String input){
         input = input.replaceAll("[!,?._'@]"," ");
         List<String> tokensList = new ArrayList<>(Arrays.asList(input.split(" ")));
