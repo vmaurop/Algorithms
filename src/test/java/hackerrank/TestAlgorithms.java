@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 
 import java.math.BigInteger;
 
+import static hackerrank.Strings.getSmallestAndLargest;
+
 public class TestAlgorithms {
 
     @Test
@@ -41,5 +43,15 @@ public class TestAlgorithms {
     public void beautifulDays() {
         Assert.assertEquals(Algorithms.beautifulDays(20, 23, 6), 2);
     }
+
+    @Test
+    public void testGetSmallestAndLargest() {
+        String s = "welcometojava";
+        int k = 3;
+        String expectedSmallest = "ava";
+        String expectedLargest = "wel";
+        Assert.assertEquals(getSmallestAndLargest(s,k), expectedSmallest + "\n" + expectedLargest);
+    }
+
 
 }

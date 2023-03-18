@@ -71,4 +71,28 @@ public class Strings {
         }
     }
 
+    /**
+     * https://www.hackerrank.com/challenges/java-string-compare/
+     * @param s
+     * @param k
+     * @return
+     */
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+        List<String> subStrings = new ArrayList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i+1; j <= s.length(); j++) {
+                subStrings.add(s.substring(i, j));
+            }
+        }
+
+        subStrings.removeIf( t -> t.length() != k);
+        Collections.sort(subStrings);
+        smallest = subStrings.get(0);
+        largest = subStrings.get(subStrings.size()-1);
+        return smallest + "\n" + largest;
+    }
+
 }
