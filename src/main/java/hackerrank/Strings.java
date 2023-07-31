@@ -99,4 +99,23 @@ public class Strings {
         return smallest + "\n" + largest;
     }
 
+
+    /**
+     * https://www.hackerrank.com/challenges/valid-username-checker/problem
+     */
+    public static void usernameValidator() {
+        String regularExpression = "^[A-Za-z][A-Za-z0-9_]{7,29}$";
+        Scanner scan = new Scanner(System.in);
+        int n = Integer.parseInt(scan.nextLine());
+        while (n-- != 0) {
+            String userName = scan.nextLine();
+
+            if (userName.matches(regularExpression)) {
+                System.out.println("Valid");
+            } else {
+                System.out.println("Invalid");
+            }
+        }
+    }
+
 }
