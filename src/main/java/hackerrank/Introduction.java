@@ -1,5 +1,7 @@
 package hackerrank;
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Introduction {
@@ -82,5 +84,78 @@ public class Introduction {
 
         }
     }
+
+    public static void currencyFormatter() {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+
+        String us = NumberFormat.getCurrencyInstance(Locale.US).format(payment);
+        String india = NumberFormat.getCurrencyInstance(new Locale("en","IN")).format(payment);
+        String china = NumberFormat.getCurrencyInstance(Locale.CHINA).format(payment);
+        String france = NumberFormat.getCurrencyInstance(Locale.FRANCE).format(payment);
+
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
+    }
+
+    public static void outputFormatting() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("================================");
+        for (int i = 0; i < 3; i++) {
+            String s1 = sc.next();
+            int x = sc.nextInt();
+            String xAsString = String.valueOf(x);
+            StringBuilder result = new StringBuilder();
+            //Complete this line
+
+            int stringCount = s1.length();
+            int digitCount = String.valueOf(x).length();
+
+            if(stringCount < 15){
+                for( int k =0; k < 15 - stringCount; k++){
+                    s1+=" ";
+                }
+            }
+
+            if(digitCount < 3){
+                for( int k =0; k < 3 - digitCount; k++){
+                    result.append('0');
+                }
+            }
+
+            result.append(xAsString);
+            String formattedNumber = result.toString();
+            System.out.println(s1 + "" + formattedNumber);
+
+        }
+        System.out.println("================================");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
