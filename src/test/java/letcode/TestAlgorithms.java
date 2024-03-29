@@ -3,6 +3,8 @@ package letcode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class TestAlgorithms {
 
 
@@ -15,5 +17,6 @@ public class TestAlgorithms {
     public void searchInsert() {
         int[] nums = new int[]{1, 3, 5, 6};
         Assert.assertEquals(LetCode.searchInsert(nums, 2), 1);
+        System.out.print(Arrays.toString(nums));
     }
 }
