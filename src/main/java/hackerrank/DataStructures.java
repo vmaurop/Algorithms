@@ -1,5 +1,7 @@
 package hackerrank;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class DataStructures {
@@ -21,5 +23,21 @@ public class DataStructures {
         }
 
     }
+
+    /**
+     * https://www.hackerrank.com/challenges/arrays-ds/problem?isFullScreen=true
+     *
+     * @param a
+     * @return
+     */
+    public static List<Integer> reverseArray(List<Integer> a) {
+        List<Integer> reversedArray = new ArrayList<>();
+        for (int i = 0; i < a.size(); i++) {
+            reversedArray.add(a.get((a.size() - 1) - i));
+        }
+        return reversedArray;
+
+    }
+
 
 }

@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.List;
 
 import static hackerrank.Strings.getSmallestAndLargest;
 
@@ -51,6 +53,12 @@ public class TestAlgorithms {
         String expectedSmallest = "ava";
         String expectedLargest = "wel";
         Assert.assertEquals(getSmallestAndLargest(s,k), expectedSmallest + "\n" + expectedLargest);
+    }
+
+    @Test
+    public void reverseArray() {
+        List<Integer> array = Arrays.asList(1,2,3,4);
+        Assert.assertEquals(DataStructures.reverseArray(array), Arrays.asList(4,3,2,1));
     }
 
 
