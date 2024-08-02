@@ -61,5 +61,14 @@ public class TestAlgorithms {
         Assert.assertEquals(DataStructures.reverseArray(array), Arrays.asList(4,3,2,1));
     }
 
+    @Test
+    public void rotateLeftArray() {
+        List<Integer> array = Arrays.asList(1,2,3,4,5);
+        int timesRotateLeft=4;
+        List<Integer> rotatedArray = DataStructures.rotateLeft(timesRotateLeft, array);
+        Assert.assertEquals(rotatedArray, Arrays.asList(5,1,2,3,4));
+    }
+
+
 
 }
