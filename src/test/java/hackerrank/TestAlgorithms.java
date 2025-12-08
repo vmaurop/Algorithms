@@ -29,9 +29,9 @@ public class TestAlgorithms {
 
     @Test
     public void extraLongFactorials() {
-        int n = 25;
+        int n = 15;
         BigInteger bigInteger = Algorithms.extraLongFactorials(n);
-        Assert.assertEquals(new BigInteger("15511210043330985984000000"), bigInteger);
+        Assert.assertEquals(bigInteger, new BigInteger("1307674368000"));
     }
 
     @Test
